@@ -12,7 +12,7 @@ func main() {
 
     http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
         http.ServeFile(res, req, "./server.go")
-        fmt.Printf("%s %s", req.Method, req.URL)
+        fmt.Printf("%s %s %s %s", req.RemoteAddr, req.Method, req.URL, req.Header.Get("User-Agent"))
     })
 
     http.ListenAndServe(":8080", nil)
