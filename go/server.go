@@ -10,10 +10,12 @@ import (
 func main() {
     fmt.Println("Server running...")
 
-    http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
-        http.ServeFile(res, req, "./server.go")
-        fmt.Printf("%s \"%s %s %s\" \"%s\"\n", req.RemoteAddr, req.Method, req.URL, req.Proto, req.Header.Get("User-Agent"))
-    })
+    http.HandleFunc("/", webRoot)
 
     http.ListenAndServe(":8080", nil)
+}
+
+func webRoot(res http.ResponseWriter, req *http.Request) {
+    http.ServeFile(res, req, "./server.go")
+    fmt.Printf("%s \"%s %s %s\" \"%s\"\n", req.RemoteAddr, req.Method, req.URL, req.Proto, req.Header.Get("User-Agent"))
 }
