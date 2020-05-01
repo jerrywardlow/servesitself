@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-    fmt.Println("Server running...")
+    fmt.Println("Server running on port 8080...")
 
     http.HandleFunc("/", webRoot)
 
