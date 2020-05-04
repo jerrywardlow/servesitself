@@ -1,4 +1,5 @@
 FROM golang:alpine AS build
+LABEL stage=build
 
 WORKDIR /
 
