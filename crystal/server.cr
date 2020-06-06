@@ -2,6 +2,10 @@
 
 require "http/server"
 
+# Handle SIGINT/SIGTERM
+Signal::INT.trap { puts "Caught SIGINT, bye!"; exit }
+Signal::TERM.trap { puts "Caught SIGTERM, sorry!"; exit }
+
 server = HTTP::Server.new do |context|
     context.response.content_type = "text/plain"
     context.response.print "Placeholder"
