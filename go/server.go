@@ -18,6 +18,6 @@ func main() {
 }
 
 func webRoot(res http.ResponseWriter, req *http.Request) {
-    http.ServeFile(res, req, "./server.go")
+    fmt.Fprintf(res, sourceCode)
     fmt.Printf("%s \"%s %s %s\" \"%s\"\n", req.RemoteAddr, req.Method, req.URL, req.Proto, req.Header.Get("User-Agent"))
 }
