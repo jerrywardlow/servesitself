@@ -7,6 +7,8 @@ import (
     "net/http"
 )
 
+var sourceCode string
+
 func main() {
     fmt.Println("Server running on port 8080...")
 
