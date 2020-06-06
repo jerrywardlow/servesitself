@@ -14,7 +14,6 @@ RUN go build -o /go-servesitself
 FROM scratch
 
 COPY --from=build /go-servesitself /
-COPY --from=build /server.go /
 
 
 CMD ["/go-servesitself"]
