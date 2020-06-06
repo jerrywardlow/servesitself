@@ -4,6 +4,6 @@ WORKDIR /
 
 ADD server.cr /
 
-RUN crystal build server.cr -o crystal-servesitself
+RUN crystal build server.cr -o crystal-servesitself --static
 
 CMD ["/crystal-servesitself"]
