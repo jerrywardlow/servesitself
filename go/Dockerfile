@@ -9,7 +9,7 @@ ENV CGO_ENABLED=0
 ENV GOOS=linux
 ENV GOARCH=amd64
 
-RUN go build -o /go-servesitself
+RUN go build -ldflags "-X 'main.sourceCode=$(base64 server.go)'" -o /go-servesitself
 
 FROM scratch
 
