@@ -19,7 +19,7 @@ func main() {
 }
 
 func webRoot(res http.ResponseWriter, req *http.Request) {
-    fmt.Fprintf(res, b64Decoder(sourceCode))
+    fmt.Fprint(res, b64Decoder(sourceCode))
     fmt.Printf("%s \"%s %s %s\" \"%s\"\n", req.RemoteAddr, req.Method, req.URL, req.Proto, req.Header.Get("User-Agent"))
 }
 
