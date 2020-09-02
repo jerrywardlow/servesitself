@@ -12,7 +12,7 @@ handler = sourceHandler
 
 httpd = socketserver.TCPServer(("", 8080), handler)
 
-print("serving at port 8080...")
+print("Server running on port 8080...")
 
 try:
     httpd.serve_forever()
