@@ -1,11 +1,12 @@
 # This is a basic web server written in Python which serves it's own source code
 
 import http.server
+import os.path
 import socketserver
 
 class sourceHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
-        self.path = 'server.py'
+        self.path = os.path.basename(__file__)
         return http.server.SimpleHTTPRequestHandler.do_GET(self)
 
 handler = sourceHandler
