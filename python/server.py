@@ -14,4 +14,7 @@ httpd = socketserver.TCPServer(("", 8080), handler)
 
 print("serving at port 8080...")
 
-httpd.serve_forever()
+try:
+    httpd.serve_forever()
+except (KeyboardInterrupt, SystemExit):
+    print("Terminating...")
