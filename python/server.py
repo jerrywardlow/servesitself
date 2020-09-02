@@ -1,3 +1,5 @@
+# This is a basic web server written in Python which serves it's own source code
+
 import http.server
 import socketserver
 
